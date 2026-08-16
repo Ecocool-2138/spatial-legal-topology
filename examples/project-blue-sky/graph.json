@@ -1,0 +1,72 @@
+{
+  "example": "Project Blue Sky Inc v Australian Broadcasting Authority [1998] HCA 28",
+  "status": "PROVISIONAL",
+  "purpose": "Test whether a typed graph can represent a bounded statutory interaction before attempting multi-jurisdiction legal topology.",
+  "nodes": [
+    {
+      "id": "BSA_s122",
+      "type": "STATUTORY_PROVISION",
+      "label": "Broadcasting Services Act 1992 (Cth) s 122",
+      "role": "power/function relating to program standards",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "BSA_s160d",
+      "type": "STATUTORY_PROVISION",
+      "label": "Broadcasting Services Act 1992 (Cth) s 160(d)",
+      "role": "constraint requiring performance consistently with Australia's international obligations",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "NZ_trade_obligation",
+      "type": "TREATY",
+      "label": "Australia-New Zealand trade/services obligation relevant in Project Blue Sky",
+      "role": "international non-discrimination obligation",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "ABA_standard",
+      "type": "DECISION",
+      "label": "Australian-content program standard",
+      "role": "exercise/output of statutory power",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "PBS_consequence_rule",
+      "type": "COMMON_LAW_RULE",
+      "label": "Project Blue Sky consequence-of-breach analysis",
+      "role": "determines whether statutory non-compliance entails invalidity",
+      "verification": "UNVERIFIED"
+    }
+  ],
+  "edges": [
+    {
+      "from": "BSA_s122",
+      "to": "ABA_standard",
+      "type": "AUTHORISES",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "from": "BSA_s160d",
+      "to": "BSA_s122",
+      "type": "CONSTRAINS",
+      "comment": "Working representation: the function/power is exercised within the statutory constraint imposed by s 160(d).",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "from": "NZ_trade_obligation",
+      "to": "BSA_s160d",
+      "type": "APPLIES_TO",
+      "comment": "Placeholder relationship pending precise modelling of how the statutory provision gives operative relevance to the international obligation.",
+      "verification": "UNVERIFIED"
+    },
+    {
+      "from": "PBS_consequence_rule",
+      "to": "ABA_standard",
+      "type": "TESTS",
+      "comment": "A breach of a statutory requirement does not by itself answer whether the resulting act is invalid; consequence is separately construed.",
+      "verification": "UNVERIFIED"
+    }
+  ],
+  "next_step": "Verify every node and edge against the High Court judgment and add pinpoint citations before promoting any item to HUMAN_VERIFIED."
+}
