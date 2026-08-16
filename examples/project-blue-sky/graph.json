@@ -2,71 +2,102 @@
   "example": "Project Blue Sky Inc v Australian Broadcasting Authority [1998] HCA 28",
   "status": "PROVISIONAL",
   "purpose": "Test whether a typed graph can represent a bounded statutory interaction before attempting multi-jurisdiction legal topology.",
+  "research_note": "Primary-source pinpoints have been added by AI research. Nothing in this file is HUMAN_VERIFIED until a human reviewer checks the sources and modelling choices.",
   "nodes": [
     {
       "id": "BSA_s122",
       "type": "STATUTORY_PROVISION",
       "label": "Broadcasting Services Act 1992 (Cth) s 122",
-      "role": "power/function relating to program standards",
-      "verification": "UNVERIFIED"
+      "role": "statutory command and power to determine program standards, including standards relating to Australian content",
+      "jurisdiction": "Commonwealth of Australia",
+      "source_citation": "Broadcasting Services Act 1992 (Cth) s 122(1)(a), (2)(b), (4); Project Blue Sky [1998] HCA 28 [79]-[81]",
+      "source_passage_or_pinpoint": "s 122(1)(a), (2)(b), (4); HCA [79]-[81]",
+      "authority_level": "Commonwealth statute; High Court construction",
+      "proposition_status": "RATIO",
+      "verification": "AI_PROPOSED"
     },
     {
       "id": "BSA_s160d",
       "type": "STATUTORY_PROVISION",
       "label": "Broadcasting Services Act 1992 (Cth) s 160(d)",
-      "role": "constraint requiring performance consistently with Australia's international obligations",
-      "verification": "UNVERIFIED"
+      "role": "general statutory obligation requiring ABA functions to be performed consistently with Australia's treaty and bilateral-agreement obligations",
+      "jurisdiction": "Commonwealth of Australia",
+      "source_citation": "Broadcasting Services Act 1992 (Cth) s 160(d); Project Blue Sky [1998] HCA 28 [80]-[82]",
+      "source_passage_or_pinpoint": "s 160(d); HCA [80]-[82]",
+      "authority_level": "Commonwealth statute; High Court construction",
+      "proposition_status": "RATIO",
+      "verification": "AI_PROPOSED"
     },
     {
-      "id": "NZ_trade_obligation",
+      "id": "ANZCERTA_services_arts4_5",
       "type": "TREATY",
-      "label": "Australia-New Zealand trade/services obligation relevant in Project Blue Sky",
-      "role": "international non-discrimination obligation",
-      "verification": "UNVERIFIED"
+      "label": "Protocol on Trade in Services to ANZCERTA (1988), Arts 4 and 5(1)",
+      "role": "market-access and national-treatment obligations requiring treatment of New Zealand persons and services no less favourable than Australian persons and services",
+      "jurisdiction": "Australia-New Zealand international agreement",
+      "effective_from": "1989-01-01",
+      "source_citation": "Protocol on Trade in Services to the Australia New Zealand Closer Economic Relations - Trade Agreement, Australian Treaty Series 1988 No 20, Arts 4 and 5(1); Project Blue Sky [1998] HCA 28 [82], [84]",
+      "source_passage_or_pinpoint": "Arts 4, 5(1); HCA [82], [84]",
+      "authority_level": "Treaty obligation; High Court application through s 160(d)",
+      "proposition_status": "RATIO",
+      "verification": "AI_PROPOSED"
     },
     {
-      "id": "ABA_standard",
+      "id": "ABA_standard_cl9",
       "type": "DECISION",
-      "label": "Australian-content program standard",
-      "role": "exercise/output of statutory power",
-      "verification": "UNVERIFIED"
+      "label": "Clause 9, Australian Content Standard determined 15 December 1995",
+      "role": "exercise/output of the ABA's statutory program-standard function imposing an Australian transmission quota",
+      "legal_effect_in_case": "Held to have been made in breach of the Act and therefore unlawfully made, but not invalid merely because of the s 160 breach.",
+      "source_citation": "Project Blue Sky [1998] HCA 28 [84]-[86], [99]-[101]",
+      "source_passage_or_pinpoint": "HCA [84]-[86], [99]-[101]",
+      "authority_level": "High Court joint majority",
+      "proposition_status": "RATIO",
+      "verification": "AI_PROPOSED"
     },
     {
       "id": "PBS_consequence_rule",
       "type": "COMMON_LAW_RULE",
       "label": "Project Blue Sky consequence-of-breach analysis",
-      "role": "determines whether statutory non-compliance entails invalidity",
-      "verification": "UNVERIFIED"
+      "role": "determines whether statutory non-compliance entails invalidity by asking whether invalidity was a purpose of the legislation",
+      "source_citation": "Project Blue Sky [1998] HCA 28 [91]-[100]",
+      "source_passage_or_pinpoint": "HCA [91]-[100]",
+      "authority_level": "High Court joint majority",
+      "proposition_status": "RATIO",
+      "verification": "AI_PROPOSED"
     }
   ],
   "edges": [
     {
       "from": "BSA_s122",
-      "to": "ABA_standard",
+      "to": "ABA_standard_cl9",
       "type": "AUTHORISES",
-      "verification": "UNVERIFIED"
+      "comment": "The making of an Australian-content standard was within the functions/powers granted to the ABA; the problem was the manner of exercise, not absence of power to make such a standard at all.",
+      "source_citation": "Project Blue Sky [1998] HCA 28 [79]-[80], [94]",
+      "verification": "AI_PROPOSED"
     },
     {
       "from": "BSA_s160d",
       "to": "BSA_s122",
       "type": "CONSTRAINS",
-      "comment": "Working representation: the function/power is exercised within the statutory constraint imposed by s 160(d).",
-      "verification": "UNVERIFIED"
+      "comment": "The joint majority described ss 122 and 160 as interlocking provisions, with s 160 directing how the s 122 function is carried out; the s 122 power must be exercised within the framework imposed by s 160.",
+      "source_citation": "Project Blue Sky [1998] HCA 28 [80]-[81]",
+      "verification": "AI_PROPOSED"
     },
     {
-      "from": "NZ_trade_obligation",
-      "to": "BSA_s160d",
-      "type": "APPLIES_TO",
-      "comment": "Placeholder relationship pending precise modelling of how the statutory provision gives operative relevance to the international obligation.",
-      "verification": "UNVERIFIED"
+      "from": "BSA_s160d",
+      "to": "ANZCERTA_services_arts4_5",
+      "type": "INCORPORATES",
+      "comment": "Graph-semantic use of INCORPORATES only: s 160(d) gives the relevant international obligations operative significance as constraints on the ABA's performance of its functions. This does not assert general transformation of the treaty into directly enforceable domestic law.",
+      "source_citation": "Project Blue Sky [1998] HCA 28 [82]; Protocol Arts 4 and 5(1)",
+      "verification": "AI_PROPOSED"
     },
     {
       "from": "PBS_consequence_rule",
-      "to": "ABA_standard",
+      "to": "ABA_standard_cl9",
       "type": "TESTS",
-      "comment": "A breach of a statutory requirement does not by itself answer whether the resulting act is invalid; consequence is separately construed.",
-      "verification": "UNVERIFIED"
+      "comment": "Breach of s 160 did not itself entail invalidity. The joint majority asked whether invalidity was a purpose of the legislation and concluded that acts done in breach of s 160 are not invalid, although the breach is unlawful.",
+      "source_citation": "Project Blue Sky [1998] HCA 28 [91]-[100]",
+      "verification": "AI_PROPOSED"
     }
   ],
-  "next_step": "Verify every node and edge against the High Court judgment and add pinpoint citations before promoting any item to HUMAN_VERIFIED."
+  "next_step": "Human reviewer to check the source pinpoints and the modelling choice to use INCORPORATES for s 160(d)'s relationship to the treaty obligations. Promote items to HUMAN_VERIFIED only after that review."
 }
